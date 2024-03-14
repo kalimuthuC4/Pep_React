@@ -19,6 +19,8 @@ export default function Topbar({mode,setMode}) {
         <Toolbar>
         <Button  variant="outlined" color="inherit" onClick={() => navigate("/portal/addmovie")}>Movie</Button>
           <Button variant="outlined" color="inherit" onClick={() => navigate("/portal/home")}>Home</Button>
+          <Button variant="outlined" color="inherit" onClick={() => navigate("/portal/addmovie")}>Nagivation</Button>
+
           <Button color="inherit">Login</Button>
           <Button 
           style={{marginleft:"60%"}} 
