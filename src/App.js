@@ -13,6 +13,7 @@ import MovieList from './component/MovieList.js';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import Paper from '@mui/material/Paper'
+import MovieDetail from './component/MovieDetail.js';
 
 function App() {
   const [mode,setMode] = useState("light");
@@ -35,6 +36,7 @@ function App() {
       <Route path="movielist" element={<MovieList/>} />
       <Route path="movie" element={<Movie/>} />
       <Route path="addmovie" element={<AddMovie/>} />
+      <Route path="view/:id" element={<MovieDetail/>} />
     </Route>
     <Route path="*" element={<Notfound/>} />
     
