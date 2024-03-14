@@ -17,9 +17,9 @@ export default function Topbar({mode,setMode}) {
     // <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-        <Button  variant="outlined" color="inherit" onClick={() => navigate("/portal/addmovie")}>Movie</Button>
+        <Button  variant="outlined" color="inherit" onClick={() => navigate("/portal/movielist")}>Movie</Button>
           <Button variant="outlined" color="inherit" onClick={() => navigate("/portal/home")}>Home</Button>
-          <Button variant="outlined" color="inherit" onClick={() => navigate("/portal/addmovie")}>Nagivation</Button>
+          <Button variant="outlined" color="inherit" onClick={() => navigate("/portal/addmovie")}>Add Movie</Button>
 
           <Button color="inherit">Login</Button>
           <Button 

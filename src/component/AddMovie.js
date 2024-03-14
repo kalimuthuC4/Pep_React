@@ -5,10 +5,11 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './AddMovie.css'
 import * as yup from "yup";
+import { useNavigate } from 'react-router-dom';
 
 export default function AddMovie() {
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const movievalidationSchema = yup.object({
       name:yup.string().required(),
@@ -30,10 +31,16 @@ export default function AddMovie() {
     validationSchema:movievalidationSchema,
     
     onSubmit:(values) =>{
-      console.log(values)
-    }
+      addMovie(values)
+    },
   });
-
+  const addMovie =()=>{
+    fetch("https://65f16b93034bdbecc76271e3.mockapi.io/moviapi/movie",{
+      method:"POST",
+      body:JSON.stringify(),
+      headers:{'Content-type':"application/json"},
+    }).then(() => navigate("/portal/movie"))
+  }
   return (
     <>
     <form className="addForms" onSubmit={formik.handleSubmit}>
