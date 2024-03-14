@@ -24,7 +24,7 @@ export default function Topbar({mode,setMode}) {
           style={{marginleft:"60%"}} 
           startIcon={mode==="light"?<Brightness4Icon/>:<Brightness7Icon/>} 
           color="inherit"
-           onClick={()=> setMode(mode ==="light"?"dark":"light")}>
+           onClick={()=> setMode(mode ==="light" ? "dark":"light")}>
            {mode === "light" ?"dark":"light"}Mode
            </Button>
         </Toolbar>
