@@ -11,6 +11,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 // import Button from '@mui/material/Button';
+import EditIcon from '@mui/icons-material/Edit'
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
@@ -41,7 +42,14 @@ export default function Movie({movieTake}) {
         {/* <button onClick={() => setShow(!show)}>Toggle des- {show + ""}</button> */}
         {show ? <p className='movie-summary'>{movieTake.summary}</p>:null}
         <CardActions>
+
           <Counter/>
+          <IconButton sx={{marginLeft:"auto"}}
+          aria-label="Toggle-Descroption"
+          onClick={()=>navigate(`/ortal/edit/${movieTake.id}`)}
+          > 
+            <EditIcon color="secondary"/>
+          </IconButton>
         </CardActions>
         
     

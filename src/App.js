@@ -14,6 +14,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { useState } from 'react';
 import Paper from '@mui/material/Paper'
 import MovieDetail from './component/MovieDetail.js';
+import EditMovie from './component/EditMovie.js';
 
 function App() {
   const [mode,setMode] = useState("light");
@@ -32,15 +33,17 @@ function App() {
     <Route path="/" element={<Login/>} /> 
     <Route path="/register" element={<Register/>} />
     <Route path="/portal" element={<Portal mode={mode} setMode={setMode} />} >
-    <Route path="home" element={<Home/>} />
+      <Route path="home" element={<Home/>} />
       <Route path="movielist" element={<MovieList/>} />
       <Route path="movie" element={<Movie/>} />
       <Route path="addmovie" element={<AddMovie/>} />
       <Route path="view/:id" element={<MovieDetail/>} />
+      <Route path="edit/:id" element={ <EditMovie/>} />
     </Route>
     <Route path="*" element={<Notfound/>} />
     
-    </Routes> </Paper>
+    </Routes> 
+    </Paper>
     </ThemeProvider>
     
     </>
