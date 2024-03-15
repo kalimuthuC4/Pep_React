@@ -21,7 +21,7 @@ export default function Topbar({mode,setMode}) {
           <Button  color="inherit" onClick={() => navigate("/portal/home")}>Home</Button>
           <Button  color="inherit" onClick={() => navigate("/portal/addmovie")}>Add Movie</Button>
 
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={() => navigate("/")}>Login</Button>
           <Button 
           style={{marginleft:"60%"}} 
           startIcon={mode==="light"?<Brightness4Icon/>:<Brightness7Icon/>} 

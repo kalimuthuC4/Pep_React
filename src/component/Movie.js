@@ -12,16 +12,26 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 // import Button from '@mui/material/Button';
 import EditIcon from '@mui/icons-material/Edit'
+
+import DeleteIcon from '@mui/icons-material/Delete'
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Movie({movieTake}) {
+export default function Movie({movieTake,getMovies}) {
   const ratingStyle={
-    color:movieTake.rating>=8.5?'green':'red'
+    color:movieTake.rating >= 8.5?'green':'red'
   }
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [show,setShow] = useState();
+  const deleteMovie = (id) =>{
+    fetch(`https://65f16b93034bdbecc76271e3.mockapi.io/moviapi/movie/${id}`,{
+      method:"DELETE",
+    })
+    .then(()=>getMovies())
+    .then(()=>alert("this cart gets deleted"))
+  }
+
   return (
     <Card className='movie-container' sx={{ maxWidth: 345 }}>
       <CardMedia className="movie-poster" height="140" alt="VIKRAM" image={movieTake.poster}/> 
@@ -46,9 +56,16 @@ export default function Movie({movieTake}) {
           <Counter/>
           <IconButton sx={{marginLeft:"auto"}}
           aria-label="Toggle-Descroption"
-          onClick={()=>navigate(`/ortal/edit/${movieTake.id}`)}
+          onClick={()=>navigate(`/portal/edit/${movieTake.id}`)}
           > 
             <EditIcon color="secondary"/>
+          </IconButton>
+
+          <IconButton sx={{marginLeft:"auto"}}
+          aria-label="Toggle-Descroption"
+          onClick={()=>deleteMovie(movieTake.id)}
+          > 
+            <DeleteIcon color="secondary"/>
           </IconButton>
         </CardActions>
         

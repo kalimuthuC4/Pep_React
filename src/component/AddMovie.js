@@ -99,6 +99,8 @@ export default function AddMovie() {
       headers:{'Content-type':"application/json"},
     }).then(() => navigate("/portal/movielist"))
   }
+
+  
   return (
     <>
     <form className="addForms" onSubmit={formik.handleSubmit}>
